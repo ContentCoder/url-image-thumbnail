@@ -8,8 +8,11 @@
  * update date: 2014-2-28
  */
 
-var util		= require('util'), 
-		path		= require('path');
+var util	= require('util'), 
+		path	= require('path'), 
+		aws 	= require('aws-sdk'), 
+		uc 		= require(path.join(__dirname, '../s3-url-cache/url-cache.js')), 
+		tc 		= require(path.join(__dirname, '../image-thumbnail-cache/thumbnail-cache.js'));
 
 // aws init
 aws.config.loadFromPath(path.join(__dirname, 'awsconfig.json'));
